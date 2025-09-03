@@ -31,7 +31,7 @@ export default function Asesoria({ title, text, img, title2, text2, ctaText })
                     dangerouslySetInnerHTML={{ __html: text }}
                 />
                 
-                {/* Imagen central */}
+                {/* Imagen ceeentral */}
                 <div className="flex justify-center mb-12 lg:mb-16">
                     <img
                         src={img}
