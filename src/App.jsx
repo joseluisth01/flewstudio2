@@ -18,7 +18,7 @@ function App() {
           <Route path='/' element={<Inicio />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/design' element={<Design />} />
-          <Route path='/fabricion-textil' element={<FabricacionTextil />} />
+          <Route path='/fabricacion-textil' element={<FabricacionTextil />} />
           <Route path='/opiniones' element={<Opiniones />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/blog' element={<Blog />} />

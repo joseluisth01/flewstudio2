@@ -2,84 +2,169 @@ import React from "react";
 
 import Header from "../components/Header";
 import MainBanner from "../components/MainBanner";
-import Agencia from "../components/Agencia";
-import Servicios from "../components/Servicios";
-import Separador from "../components/Separador";
-import Asesoria from "../components/Asesoria";
-import FormularioContacto from "../components/FormularioContacto";
 import Footer from "../components/Footer";
 
-import serviciosFabricacion00 from "../assets/fabricacion/serviciosprofesionales1.png";
-import serviciosFabricacion01 from "../assets/fabricacion/serviciosprofesionales2.png";
-import serviciosFabricacion02 from "../assets/fabricacion/serviciosprofesionales3.png";
-import serviciosFabricacion03 from "../assets/fabricacion/serviciosprofesionales4.png";
-import serviciosFabricacion04 from "../assets/fabricacion/serviciosprofesionales5.png";
-import serviciosFabricacion05 from "../assets/fabricacion/serviciosprofesionales6.png";
+// Imágenes de fabricación textil
+import bannerImg from "../assets/fabricacion/imagebanner.png";
+import agenciaImg1 from "../assets/fabricacion/agenciadeproducciontextil1.png";
+import agenciaImg2 from "../assets/fabricacion/agenciadeproducciontextil2.png";
+
+// Componente personalizado para la sección de Agencia de Producción Textil
+function AgenciaProduccionTextil() {
+    return (
+        <div className="bg-black py-16 lg:py-24">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                
+                {/* Título principal */}
+                <h2 
+                    className="text-center font-bold mb-12 lg:mb-16"
+                    style={{ 
+                        fontFamily: 'Clash Display',
+                        fontSize: 'clamp(28px, 4vw, 36px)',
+                        fontWeight: 700,
+                        lineHeight: 'normal'
+                    }}
+                >
+                    <span className="text-white">AGENCIA DE </span>
+                    <span className="text-primary">PRODUCCIÓN TEXTIL</span>
+                </h2>
+
+                {/* Contenedor principal */}
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                    
+                    {/* Columna izquierda */}
+                    <div className="w-full lg:w-1/2 space-y-8">
+                        
+                        {/* Texto principal */}
+                        <p 
+                            className="text-white text-justify leading-relaxed"
+                            style={{ 
+                                fontFamily: 'Clash Display',
+                                fontSize: 'clamp(16px, 2.5vw, 20px)',
+                                fontWeight: 400,
+                                lineHeight: '1.6'
+                            }}
+                        >
+                            En <strong>FlewStudio</strong>, convertimos tus ideas en productos textiles de alta calidad. Nos encargamos de la <strong>gestión de producción</strong>, el desarrollo de muestras y el contacto directo con fábricas y proveedores, su cuidado meticuloso según el techpack hasta su entrega final. Garantizando así un <strong>proceso eficiente y controlado en cada etapa.</strong>
+                        </p>
+
+                        {/* Pregunta destacada */}
+                        <p 
+                            className="text-white font-semibold"
+                            style={{ 
+                                fontFamily: 'Clash Display',
+                                fontSize: 'clamp(20px, 3vw, 27px)',
+                                fontWeight: 600,
+                                lineHeight: 'normal'
+                            }}
+                        >
+                            ¿QUIERES EMPEZAR AHORA <span className="text-primary">CON LA CREACIÓN DE TUS PRENDAS?</span>
+                        </p>
+
+                        {/* Primer botón CTA */}
+                        <div className="flex justify-center">
+                            <button 
+                                className="bg-primary text-black px-8 py-3 font-medium hover:bg-yellow-500 transition-colors duration-300 w-full"
+                                style={{ 
+                                    fontFamily: 'Clash Display',
+                                    fontSize: 'clamp(16px, 2.5vw, 18px)',
+                                    fontWeight: 500
+                                }}
+                            >
+                                PRESUPUESTO GRATIS
+                            </button>
+                        </div>
+
+                        {/* Primera imagen (abajo) */}
+                        <div className="w-full">
+                            <img 
+                                src={agenciaImg2}
+                                alt="Agencia de Producción Textil"
+                                className="w-full h-auto object-cover"
+                                style={{ height: '310px' }}
+                            />
+                            
+                        </div>
+                    </div>
+
+                    {/* Columna derecha */}
+                    <div className="w-full lg:w-1/2 space-y-8">
+                        
+                        {/* Segunda imagen (arriba) */}
+                        <div className="w-full">
+                            <img 
+                                src={agenciaImg1}
+                                alt="Muestras textiles"
+                                className="w-full h-auto object-cover"
+                                style={{ height: '290px' }}
+                            />
+                        </div>
+
+                        {/* Segundo botón CTA */}
+                        <div className="flex justify-center">
+                            <button 
+                                className="bg-primary text-black px-8 py-3 font-medium hover:bg-yellow-500 transition-colors duration-300 w-full"
+                                style={{ 
+                                    fontFamily: 'Clash Display',
+                                    fontSize: 'clamp(16px, 2.5vw, 18px)',
+                                    fontWeight: 500
+                                }}
+                            >
+                                CUÉNTANOS TU IDEA
+                            </button>
+                        </div>
+
+                        {/* Subtítulo */}
+                        <h3 
+                            className="text-primary font-semibold"
+                            style={{ 
+                                fontFamily: 'Clash Display',
+                                fontSize: 'clamp(20px, 3vw, 27px)',
+                                fontWeight: 600,
+                                lineHeight: 'normal'
+                            }}
+                        >
+                            DALE UNA OPORTUNIDAD A TU MAYOR IDEA CON FLEWSTUDIO
+                        </h3>
+
+                        {/* Texto secundario */}
+                        <p 
+                            className="text-white text-justify leading-relaxed"
+                            style={{ 
+                                fontFamily: 'Clash Display',
+                                fontSize: 'clamp(16px, 2.5vw, 20px)',
+                                fontWeight: 400,
+                                lineHeight: '1.6'
+                            }}
+                        >
+                            Nos enfocamos en <strong>soluciones creativas y eficaces</strong>, adaptadas a las necesidades de tu marca o negocio. Ya sea que busques <strong>fabricación a medida</strong>, personalización textil o desarrollo de muestras, estamos aquí para hacerlo realidad.
+                        </p>
+
+                        <p 
+                            className="text-white text-justify leading-relaxed"
+                            style={{ 
+                                fontFamily: 'Clash Display',
+                                fontSize: 'clamp(16px, 2.5vw, 18px)',
+                                fontWeight: 400,
+                                lineHeight: '1.6'
+                            }}
+                        >
+                            Estudiamos cada cliente desde su punto de partida para mejorar sus debilidades y fortalecer sus mejores cualidades.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
 
 export default function FabricacionTextil() {
-    const services = {
-        "services00": {
-            "title": "Gestión de Producción Textil",
-            "text": "Nuestro punto fuerte es la capacidad de poder crear cualquier prenda para cualquier necesidad. Nos encargamos de todo el proceso de fabricación desde la primera muestra hasta su entrega final.",
-            "img": serviciosFabricacion00
-        },
-        "services01": {
-            "title": "Uniformes Laborales",
-            "text": "Nos volcamos en cada pedido para que se luzca con nitidez y calidad el vestuario de tu equipo para transmitir confianza para tus clientes.",
-            "img": serviciosFabricacion01
-        },
-        "services02": {
-            "title": "Desarrollo de Muestras Textiles y Control de Calidad",
-            "text": "Nos encargamos de que todo el proceso de fabricación sea óptimo con las indicaciones exactas del techpack de cada cliente.",
-            "img": serviciosFabricacion02
-        },
-        "services03": {
-            "title": "Sublimación Textil (Full - Print)",
-            "text": "Contamos con la producción más avanzada y la impresión de última tecnología con la opción de crear tus propias prendas y con el diseño que quieras.",
-            "img": serviciosFabricacion03
-        },
-        "services04": {
-            "title": "Serigrafía Textil y DTF",
-            "text": "Ofrecemos la posibilidad de estampar nuestras prendas con la última tecnología del mercado: el producto será finamente impreso y con acabado perfecto que tengas.",
-            "img": serviciosFabricacion04
-        },
-        "services05": {
-            "title": "Bordados Personalizados",
-            "text": "Nuestros bordados se confeccionan con la mejor maquinaria del mercado dejando un diseño imposible de desenganchar y con diseño como con tu producción textil.",
-            "img": serviciosFabricacion05
-        },
-    };
-
     return (
-        <div className="pagina-fabricacion-textil">
+        <div className="pagina-fabricacion-textil bg-black">
             <Header />
-            <MainBanner title={'FABRICACIÓN TEXTIL'} image={null}/>
-            <Agencia
-                title={'AGENCIA DE <span style="color: var(--color-primary)">PRODUCCIÓN TEXTIL</span>'}
-                text={'En <b>FlewStudio</b>, convertimos tus ideas en productos textiles de alta calidad. Nos encargamos de la <b>gestión de producción</b>, el desarrollo de muestras y el contacto directo con fábricas y proveedores, su cuidado meticuloso según el techpack hasta su entrega final. Garantizando así un <b>proceso eficiente y controlado en cada etapa.</b><br><br><span style="font-weight: 600; font-size: 24px;">¿QUIERES EMPEZAR AHORA <span style="color: var(--color-primary);">CON LA CREACIÓN DE TUS PRENDAS?</span></span>'}
-                img={null}
-                ctaText={'PRESUPUESTO GRATIS'}
-                img2={null}
-                subtitle={'DALE UNA OPORTUNIDAD A TU MAYOR IDEA CON FLEWSTUDIO'}
-                text2={'Nos enfocamos en <b>soluciones creativas y eficaces</b>, adaptadas a las necesidades de tu marca o negocio. Ya sea que busques <b>fabricación a medida</b>, personalización textil o desarrollo de muestras, estamos aquí para hacerlo realidad.<br><br>Estudiamos cada cliente desde su punto de partida para mejorar sus debilidades y fortalecer sus mejores cualidades.'}
-                ctaText2={'CUÉNTANOS TU IDEA'}
-            />
-            <Servicios
-                title={'SERVICIOS PROFESIONALES DE <span style="color: var(--color-primary)">PRODUCCIÓN TEXTIL</span>'}
-                text={'Ofrecemos una multitud de servicios de producción textil para solventar todas tus preocupaciones:'}
-                services={services}
-            />
-            <Separador />
-            <Asesoria
-                title={'DIFERENTES PROBLEMAS, <span style="color: var(--color-primary)">DIFERENTES SOLUCIONES</span>'}
-                text={'Ofrecemos distintas consultorías enfocadas en dar soluciones a diferentes problemas y/o necesidades.'}
-                img={null}
-                title2={'GARANTÍAS PROFESIONALES DE <span style="color: var(--color-primary)">ASESORAMIENTO PERSONALIZADO</span>'}
-                text2={'Nos volcamos con nuestros servicios de asesoría para subsanar todas tus inquietudes: <br><br><b>Gestión de Proyectos y Control del Presupuesto</b><br>Ayudamos a incrementar la rentabilidad de cada cliente y a reducir el margen de error desde el punto de vista comercial y técnico del producto.<br><br><b>Estudio de Tendencias y Mercados</b><br>Estamos constantemente observando tendencias para posicionar a nuestros clientes para posicionar su marca o sector desde el punto de vista visual tanto como con su producción textil.<br><br><b>Consultoría de Marca</b><br>Estudiamos cada cliente desde su punto de partida para mejorar sus debilidades y fortalece sus mejores cualidades.'}
-                ctaText={'PRESUPUESTO GRATIS'}
-            />
-            <FormularioContacto />
+            <MainBanner title={'FABRICACIÓN TEXTIL'} image={bannerImg}/>
+            <AgenciaProduccionTextil />
             <Footer />
         </div>
-    )
+    );
 }

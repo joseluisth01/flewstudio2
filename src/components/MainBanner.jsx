@@ -19,7 +19,6 @@ export default function MainBanner({ title, image }) {
                     fontSize: 'clamp(28px, 5vw, 42px)',
                     fontWeight: 900,
                     lineHeight: '150%',
-                    width: '8em',
                     paddingBottom: '0.3em'
                 }}
             >
