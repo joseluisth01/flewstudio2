@@ -19,9 +19,9 @@ import infoImg01 from "../assets/nosotros/infogeneral-01.png";
 import infoImg02 from "../assets/nosotros/infogeneral-02.png";
 import infoImg03 from "../assets/nosotros/infogeneral-03.png";
 
-import featureImg00 from "../assets/nosotros/elegirnos-00.png";
-import featureImg01 from "../assets/nosotros/elegirnos-01.png";
-import featureImg02 from "../assets/nosotros/elegirnos-02.png";
+import featureImg00 from "../assets/nosotros/elegirnos-00.gif";
+import featureImg01 from "../assets/nosotros/elegirnos-01.gif";
+import featureImg02 from "../assets/nosotros/elegirnos-02.gif";
 
 import herramientasImg00 from "../assets/nosotros/herramientas-00.png";
 import herramientasImg01 from "../assets/nosotros/herramientas-01.png";
@@ -29,14 +29,14 @@ import herramientasImg02 from "../assets/nosotros/herramientas-02.png";
 import herramientasImg03 from "../assets/nosotros/herramientas-03.png";
 import herramientasImg04 from "../assets/nosotros/herramientas-04.png";
 
-import garantiasImg00 from "../assets/nosotros/garantias-00.png";
-import garantiasImg01 from "../assets/nosotros/garantias-01.png";
-import garantiasImg02 from "../assets/nosotros/garantias-02.png";
-import garantiasImg03 from "../assets/nosotros/garantias-03.png";
-import garantiasImg04 from "../assets/nosotros/garantias-04.png";
-import garantiasImg05 from "../assets/nosotros/garantias-05.png";
-import garantiasImg06 from "../assets/nosotros/garantias-06.png";
-import garantiasImg07 from "../assets/nosotros/garantias-07.png";
+import garantiasImg00 from "../assets/garantias/sinestres.gif";
+import garantiasImg01 from "../assets/garantias/especialistas.gif";
+import garantiasImg02 from "../assets/garantias/cercania.gif";
+import garantiasImg03 from "../assets/garantias/servicio390.gif";
+import garantiasImg04 from "../assets/garantias/totalinseguridad.gif";
+import garantiasImg05 from "../assets/garantias/entregapuntual.gif";
+import garantiasImg06 from "../assets/garantias/pagoseguro.gif";
+import garantiasImg07 from "../assets/garantias/maquinaria.gif";
 
 export default function Nosotros()
 {
