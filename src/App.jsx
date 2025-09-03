@@ -21,7 +21,7 @@ function App() {
           <Route path='/fabricion-textil' element={<FabricacionTextil />} />
           <Route path='/opiniones' element={<Opiniones />} />
           <Route path='/contacto' element={<Contacto />} />
-          <Route path='/blog' element={<Blog />} />
+          {/* <Route path='/blog' element={<Blog />} /> */}
         </Routes>
       </div>
     </>
