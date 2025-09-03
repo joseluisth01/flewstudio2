@@ -55,13 +55,13 @@ export default function Header()
                     >
                         CONTACTO
                     </Link>
-                    {/* <Link 
+                    <Link 
                         to={'/blog'}
                         className="font-bold text-[17px] no-underline text-black"
                         style={{ fontFamily: 'Clash Display' }}
                     >
                         BLOG
-                    </Link> */}
+                    </Link>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -119,14 +119,14 @@ export default function Header()
                         >
                             CONTACTO
                         </Link>
-                        {/* <Link 
+                        <Link 
                             to={'/blog'}
                             className="font-bold text-[17px] no-underline text-black"
                             style={{ fontFamily: 'Clash Display' }}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             BLOG
-                        </Link> */}
+                        </Link>
                     </nav>
                 </div>
             )}
