@@ -1,0 +1,484 @@
+@import "tailwindcss";
+
+@theme {
+  --font-clash: 'Clash Display', sans-serif;
+  --font-livvic: 'Livvic', sans-serif;
+  --color-primary: #fff600;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('./assets/fonts/clash-display/ClashDisplay-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('./assets/fonts/clash-display/ClashDisplay-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('./assets/fonts/clash-display/ClashDisplay-Extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('./assets/fonts/clash-display/ClashDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('./assets/fonts/clash-display/ClashDisplay-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('./assets/fonts/clash-display/ClashDisplay-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Livvic';
+  src: url('./assets/fonts/livvic/Livvic-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Herramientas */
+.herramientas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.herramientas-title {
+  color: var(--color-primary);
+  margin-bottom: 35px;
+}
+
+.herramientas-contenedor-imagenes {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+/* Servicios */
+.banner-servicios {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.banner-servicios-wrapper {
+  width: 1400px;
+}
+
+.banner-servicios-title, .banner-servicios-seotext {
+  color: var(--color-neutral-white);
+  text-align: center;
+}
+
+.banner-servicios-seotext {
+  margin-bottom: 125px;
+}
+
+.servicios {
+  display: flex;
+  flex-direction: column;
+  gap: 125px;
+}
+
+.servicio-element {
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+  align-items: center;
+}
+
+.servicio-element:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.servicio-element-text-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+
+.inner-roman {
+  color: var(--color-primary);
+  font-family: 'Clash Display';
+  font-weight: 300;
+  font-size: 350px;
+  line-height: normal;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scaleY(125%);
+}
+
+.roman-line {
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-neutral-white);
+}
+
+.servicio-element-title {
+  font-family: 'Clash Display';
+  font-weight: 600;
+  font-size: 32px;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.servicio-element-title-text {
+  color: var(--color-neutral-white);
+}
+
+.banner-servicios-cta {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-servicios-cta button {
+  background-color: var(--color-primary);
+  border: 0;
+  padding: .5em 1em;
+  cursor: pointer;
+}
+
+/* Asesoría */
+.banner-asesoria {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.banner-asesoria-wrapper {
+  width: 1130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner-asesoria-title {
+  color: var(--color-neutral-white);
+}
+
+.banner-asesoria-seotext, .banner-asesoria-seotext-2 {
+  color: var(--color-neutral-white);
+  text-align: center;
+}
+
+.banner-asesoria-seotext {
+  margin-bottom: 50px;
+}
+
+.banner-asesoria-seotext-2 {
+  margin-bottom: 120px;
+}
+
+.banner-asesoria-img-container {
+  margin-bottom: 50px;
+}
+
+.banner-asesoria-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-asesoria-form button {
+  width: 85%;
+}
+
+.banner-asesoria-form button {
+  border: 0;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-neutral-black);
+  text-align: center;
+  padding: .5em 0;
+}
+
+/* Agencia */
+.banner-agencia {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-agencia-wrapper {
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.banner-agencia-title {
+  font-family: 'Clash Display';
+  font-weight: 700;
+  font-size: 40px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--color-neutral-white);
+}
+
+.banner-agencia-first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-agencia-text {
+  font-family: 'Clash Display';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--color-neutral-white);
+  width: 45%;
+}
+
+.banner-agencia-second-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner-agencia-sr-lh {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+}
+
+.banner-agencia-sr-lh img {
+  height: auto;
+  width: 90%;
+}
+
+.banner-agencia-sr-rh {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  width: 47%;
+  gap: 70px;
+}
+
+.banner-agencia-subtitle {
+  font-family: 'Clash Display';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--color-primary);
+  padding: 0;
+  margin: 0;
+}
+
+.banner-agencia-text2 {
+  font-family: 'Clash Display';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--color-neutral-white);
+}
+
+.banner-agencia-cta {
+  width: 100%;
+}
+
+.banner-agencia-cta  button {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-neutral-black);
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Banner Seo */
+.banner-seo {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-seo-content {
+  width: 1400px ;
+}
+
+/* Páginas */
+
+.pagina-contacto h2 {
+  color: black;
+  text-align: center;
+}
+
+.pagina-contacto .banner-formulario-contacto h2 {
+  color: var(--color-neutral-black);
+}
