@@ -29,7 +29,7 @@ export default function Elegirnos({ title, metadescription, features }) {
             />
             
             {/* Características */}
-            <div className="w-full max-w-6xl px-6 lg:px-8">
+            <div className="w-full max-w-6xl">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 justify-items-center">
                     
                     {Object.entries(features).map(([key, value]) => (

@@ -58,12 +58,13 @@ function EmpresasConfiaron({ title, companies }) {
                             className="bg-primary p-6 lg:p-8 flex flex-col lg:flex-row items-center"
                         >
                             {/* Logo */}
-                            <div className="w-full lg:w-1/3 flex justify-center lg:justify-start mb-4 lg:mb-0">
+                            <div className="w-full lg:w-1/3 flex justify-center lg:justify-start mb-4 lg:mb-0" >
                                 {company.logo ? (
                                     <img
                                         src={company.logo}
                                         alt={`Logo ${company.name}`}
                                         className="w-full max-w-full max-h-20 lg:max-h-24 object-contain"
+                                        style={{ height: '500px' }}
                                     />
                                 ) : (
                                     <div

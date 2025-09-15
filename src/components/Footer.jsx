@@ -8,17 +8,30 @@ import logoInstagram from "../assets/instagram-1.png"
 
 export default function Footer()
 {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <div className="w-full bg-primary mt-32 lg:mt-40">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-25 px-6 py-12 lg:py-20 max-w-7xl mx-auto">
                 
                 {/* Left Half */}
                 <div className="flex flex-col gap-5 w-full lg:w-auto text-center lg:text-left">
-                    <img 
-                        src={imagotipo3}
-                        alt="IMAGOTIPO FLEWSTUDIO"
-                        className="w-80 lg:w-96 h-auto mx-auto lg:mx-0"
-                    />
+                    <Link 
+                        to="#"
+                        onClick={scrollToTop}
+                        className="cursor-pointer"
+                    >
+                        <img 
+                            src={imagotipo3}
+                            alt="IMAGOTIPO FLEWSTUDIO"
+                            className="w-80 lg:w-96 h-auto mx-auto lg:mx-0 hover:opacity-80 transition-opacity duration-300"
+                        />
+                    </Link>
                     <div 
                         className="font-medium text-base lg:text-lg"
                         style={{ fontFamily: 'Clash Display', fontWeight: 500 }}
@@ -41,8 +54,8 @@ export default function Footer()
                             <p 
                                 className="text-base font-medium text-black"
                                 style={{ fontFamily: 'Clash Display' }}
-                            >
-                                687 10 46 90
+                            ><a href="https://wa.me/34687104690">687 10 46 90</a>
+                                
                             </p>
                         </div>
                         <Link 
@@ -65,8 +78,8 @@ export default function Footer()
                             <p 
                                 className="text-base font-medium text-black"
                                 style={{ fontFamily: 'Clash Display' }}
-                            >
-                                flewstudio@gmail.com
+                            ><a href="mailto:flewstudio@gmail.com">flewstudio@gmail.com</a>
+                                
                             </p>
                         </div>
                         <Link 
@@ -89,8 +102,8 @@ export default function Footer()
                             <p 
                                 className="text-base font-medium text-black"
                                 style={{ fontFamily: 'Clash Display' }}
-                            >
-                                flewstudio
+                            ><a href="https://www.instagram.com/flewstudio?igsh=MTI5MjZsd25yZnJ1Ng==">flewstudio</a>
+                                
                             </p>
                         </div>
                         <Link 

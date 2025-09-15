@@ -83,7 +83,7 @@ export default function FormularioCtr() {
                         {/* Botón Submit - mismo ancho que input teléfono */}
                         <button 
                             type="submit"
-                            className="flex-1 bg-black text-primary h-12 hover:bg-gray-800 transition-colors duration-300 cursor-pointer"
+                            className="flex-1 bg-black text-primary h-12 hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer"
                             style={{ 
                                 fontFamily: 'Clash Display',
                                 fontWeight: 500,

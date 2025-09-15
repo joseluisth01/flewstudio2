@@ -74,7 +74,7 @@ export default function Asesoria({ title, text, img, title2, text2, ctaText })
                     <div className="w-full lg:w-1/3 flex justify-center lg:justify-end">
                         <form action="/contacto" method="get" className="w-full lg:w-auto">
                             <button 
-                                className="bg-primary text-black px-8 py-4 font-medium hover:bg-yellow-500 transition-colors duration-300 w-full lg:w-auto"
+                                className="bg-primary text-black px-8 py-4 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-full lg:w-auto"
                                 style={{
                                     fontFamily: 'Clash Display',
                                     fontSize: 'clamp(16px, 2.5vw, 20px)',

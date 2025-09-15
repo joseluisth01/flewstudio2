@@ -97,12 +97,13 @@ function AgenciaProduccionTextil() {
                         {/* Primer botón CTA */}
                         <div className="flex justify-center">
                             <button
-                                className="bg-primary text-black px-8 py-3 font-medium hover:bg-yellow-500 transition-colors duration-300 w-full"
+                                className="bg-primary text-black px-8 py-3 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-full"
                                 style={{
                                     fontFamily: 'Clash Display',
                                     fontSize: 'clamp(16px, 2.5vw, 18px)',
                                     fontWeight: 500
                                 }}
+                                
                             >
                                 PRESUPUESTO GRATIS
                             </button>
@@ -136,7 +137,7 @@ function AgenciaProduccionTextil() {
                         {/* Segundo botón CTA */}
                         <div className="flex justify-center">
                             <button
-                                className="bg-primary text-black px-8 py-3 font-medium hover:bg-yellow-500 transition-colors duration-300 w-full"
+                            className="bg-primary text-black px-8 py-3 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-full"
                                 style={{
                                     fontFamily: 'Clash Display',
                                     fontSize: 'clamp(16px, 2.5vw, 18px)',
@@ -332,7 +333,7 @@ function ServiciosProfesionales() {
                 {/* CTA final */}
                 <div className="flex justify-center mt-16 lg:mt-24">
                     <button
-                        className="bg-primary text-black px-12 py-4 font-medium hover:bg-yellow-500 transition-colors duration-300"
+                        className="bg-primary text-black px-12 py-4 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer"
                         style={{
                             fontFamily: 'Clash Display',
                             fontSize: 'clamp(16px, 2.5vw, 20px)',

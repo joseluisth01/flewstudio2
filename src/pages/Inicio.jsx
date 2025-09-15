@@ -108,6 +108,7 @@ export default function Inicio()
             <Pilares />
             <Galeria />
             <FormularioCtr />
+            <br></br><br /><br />
             <Separador />
             <Garantias 
                 title="¿PORQUÉ CONTRATAR <span style='color: #fff600;'>NUESTROS SERVICIOS</span>?"
