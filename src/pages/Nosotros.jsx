@@ -40,7 +40,7 @@ import garantiasImg07 from "../assets/garantias/maquinaria.gif";
 
 export default function Nosotros()
 {
-    const infogeneralText = "Con un recorrido de más de <b>4 años</b> de experiencia, asesorando e impulsando a emprendedores a dar un salto de calidad en su sector.<br><br>Damos vida a tus ideas, analizamos tu necesidad y desarrollamos la <b>solución</b> acorde a tu mercado.<br><br>Marcamos diferencia con el resto de agencias porque somos <b>“el mejor mix”.</b><br><br>Combinamos nuestros servicios de diseño gráfico 360º con la gestión de la producción textil de <b>cualquier tipo de negocio.</b><br><br>Además ofrecemos un asesoramiento <b>personalizado</b> enfocado a cada sector para hacer fuertes sus puntos más débiles.";
+    const infogeneralText = `Con un recorrido de más de <b>4 años</b> de experiencia, asesorando e impulsando a emprendedores a dar un salto de calidad en su sector.<br><br>Damos vida a tus ideas, analizamos tu necesidad y desarrollamos la <b>solución</b> acorde a tu mercado.<br><br>Marcamos diferencia con el resto de agencias porque somos <b>"el mejor mix".</b><br><br>Combinamos nuestros servicios de diseño gráfico 360º con la gestión de la producción textil de <b>cualquier tipo de negocio.</b><br><br>Además ofrecemos un asesoramiento <b>personalizado</b> enfocado a cada sector para hacer fuertes sus puntos más débiles.`;
 
     const elegirnosFeatures = {
         "feature00": {
@@ -160,10 +160,12 @@ export default function Nosotros()
                 guarantees={garantias}
             />
             <Opiniones 
-                            title='ELLOS SE DEJARON.. <span style="color:#fff600 !important;">Y LES GUSTÓ</span> '
-                            reviews={opiniones}
-                        />
-            <FormularioContacto />
+                title='ELLOS SE DEJARON.. <span style="color:#fff600 !important;">Y LES GUSTÓ</span> '
+                reviews={opiniones}
+            />
+            <FormularioContacto 
+                descriptiveText="¿Buscas mejorar tu imagen de marca o poner guapo a tu equipo? Te explicaremos y documentaremos todo el proceso de creación."
+            />
             <Footer />
         </div>
     )

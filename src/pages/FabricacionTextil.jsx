@@ -371,7 +371,9 @@ export default function FabricacionTextil() {
                 metadescription={'Nos volcamos con nuestros servicios de asesoría para subsanar todas tus inquietudes:'}
                 features={garantiasProfesionales}
             />
-            <FormularioContacto />
+            <FormularioContacto 
+                descriptiveText="El último que rellenó el panel de abajo no se arrepintió... Te explicaremos y documentaremos todo el proceso de creación."
+            />
             <Footer />
         </div>
     );

@@ -31,7 +31,9 @@ export default function Contacto()
                 </h2>
             </div>
             
-            <FormularioContacto />
+            <FormularioContacto 
+                descriptiveText="Si has llegado hasta aquí, tu negocio está aún más cerca del éxito. Te explicaremos y documentaremos todo el proceso de creación."
+            />
             
             {/* Título para el segundo formulario */}
             <div className="flex justify-center py-8 lg:py-12">

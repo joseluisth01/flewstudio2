@@ -298,7 +298,9 @@ export default function OpinionesPage() {
                 </div>
             </div>
 
-            <FormularioContacto />
+            <FormularioContacto 
+                descriptiveText="Deja la duda atrás y vamos a darle caña a tu proyecto. Te explicaremos y documentaremos todo el proceso de creación."
+            />
             <Footer />
         </div>
     );

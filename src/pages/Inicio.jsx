@@ -118,7 +118,9 @@ export default function Inicio()
                 title='MÁS RAZONES PARA QUE <span style="color: #fff600;">CONFÍES EN FLEWSTUDIO</span>'
                 reviews={opiniones}
             />
-            <FormularioContacto />
+            <FormularioContacto 
+                descriptiveText="¿Vas a desperdiciar la oportunidad de darle vida a tus ideas? Te explicaremos y documentaremos todo el proceso de creación."
+            />
             <Footer />
         </div>
     )

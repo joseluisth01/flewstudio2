@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function FormularioContacto() {
+export default function FormularioContacto({ descriptiveText }) {
+    // Texto por defecto si no se proporciona ninguno
+    const defaultText = "¿Vas a desperdiciar la oportunidad de darle vida a tus ideas? Te explicaremos y documentaremos todo el proceso de creación.";
+    
     return (
         <div className="bg-black flex justify-center">
             <div
@@ -24,7 +27,7 @@ export default function FormularioContacto() {
                     HAZ REALIDAD TU IDEA SIN MIEDO AL ÉXITO ;)
                 </h2>
 
-                {/* Texto descriptivo */}
+                {/* Texto descriptivo personalizable */}
                 <p
                     className="text-black text-center mt-6 lg:mt-8 mb-8 lg:mb-12 w-11/12 lg:w-5/6"
                     style={{
@@ -35,7 +38,7 @@ export default function FormularioContacto() {
                         textShadow: '0px 0px 3px rgba(0, 0, 0, 1)'
                     }}
                 >
-                    ¿Vas a desperdiciar la oportunidad de darle vida a tus ideas? Te explicaremos y documentaremos todo el proceso de creación.
+                    {descriptiveText || defaultText}
                 </p>
 
                 {/* Formulario */}
