@@ -8,6 +8,9 @@ import FabricacionTextil from './pages/FabricacionTextil';
 import Opiniones from './pages/Opiniones';
 import Contacto from './pages/Contacto';
 import Blog from './pages/Blog';
+import AvisoLegal from './pages/AvisoLegal';
+import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
+import PoliticaCookies from './pages/PoliticaCookies';
 
 function App() {
 
@@ -22,6 +25,9 @@ function App() {
           <Route path='/opiniones' element={<Opiniones />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/blog' element={<Blog />} />
+          <Route path='/aviso-legal' element={<AvisoLegal />} />
+          <Route path='/politicas-privacidad' element={<PoliticaPrivacidad />} />
+          <Route path='/politica-cookies' element={<PoliticaCookies />} />
         </Routes>
       </div>
     </>

@@ -21,17 +21,16 @@ export default function Footer()
                 
                 {/* Left Half */}
                 <div className="flex flex-col gap-5 w-full lg:w-auto text-center lg:text-left">
-                    <Link 
-                        to="#"
+                    <button
                         onClick={scrollToTop}
-                        className="cursor-pointer"
+                        className="cursor-pointer bg-transparent border-none p-0"
                     >
                         <img 
                             src={imagotipo3}
                             alt="IMAGOTIPO FLEWSTUDIO"
                             className="w-80 lg:w-96 h-auto mx-auto lg:mx-0 hover:opacity-80 transition-opacity duration-300"
                         />
-                    </Link>
+                    </button>
                     <div 
                         className="font-medium text-base lg:text-lg"
                         style={{ fontFamily: 'Clash Display', fontWeight: 500 }}
@@ -54,12 +53,13 @@ export default function Footer()
                             <p 
                                 className="text-base font-medium text-black"
                                 style={{ fontFamily: 'Clash Display' }}
-                            ><a href="https://wa.me/34687104690">687 10 46 90</a>
-                                
+                            >
+                                <a href="https://wa.me/34687104690">687 10 46 90</a>
                             </p>
                         </div>
                         <Link 
-                            to={"#"}
+                            to="/aviso-legal"
+                            onClick={scrollToTop}
                             className="text-base font-medium text-black no-underline hover:text-gray-700 transition-colors"
                             style={{ fontFamily: 'Clash Display' }}
                         >
@@ -78,12 +78,13 @@ export default function Footer()
                             <p 
                                 className="text-base font-medium text-black"
                                 style={{ fontFamily: 'Clash Display' }}
-                            ><a href="mailto:flewstudio@gmail.com">flewstudio@gmail.com</a>
-                                
+                            >
+                                <a href="mailto:flewstudio@gmail.com">flewstudio@gmail.com</a>
                             </p>
                         </div>
                         <Link 
-                            to={"#"}
+                            to="/politicas-privacidad"
+                            onClick={scrollToTop}
                             className="text-base font-medium text-black no-underline hover:text-gray-700 transition-colors"
                             style={{ fontFamily: 'Clash Display' }}
                         >
@@ -102,12 +103,13 @@ export default function Footer()
                             <p 
                                 className="text-base font-medium text-black"
                                 style={{ fontFamily: 'Clash Display' }}
-                            ><a href="https://www.instagram.com/flewstudio?igsh=MTI5MjZsd25yZnJ1Ng==">flewstudio</a>
-                                
+                            >
+                                <a href="https://www.instagram.com/flewstudio?igsh=MTI5MjZsd25yZnJ1Ng==">flewstudio</a>
                             </p>
                         </div>
                         <Link 
-                            to={"#"}
+                            to="/politica-cookies"
+                            onClick={scrollToTop}
                             className="text-base font-medium text-black no-underline hover:text-gray-700 transition-colors"
                             style={{ fontFamily: 'Clash Display' }}
                         >
