@@ -1,6 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function FormularioCtr() {
+    const [formData, setFormData] = useState({
+        nombre: '',
+        telefono: '',
+        aceptacion: false
+    });
+    
+    const [isLoading, setIsLoading] = useState(false);
+    const [message, setMessage] = useState({ type: '', text: '' });
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setMessage({ type: '', text: '' });
+
+        // Validaciones básicas
+        if (!formData.nombre || !formData.telefono || !formData.aceptacion) {
+            setMessage({ type: 'error', text: 'Por favor, completa todos los campos y acepta la política de privacidad.' });
+            setIsLoading(false);
+            return;
+        }
+
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/contact/callback`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setMessage({ type: 'success', text: '¡Solicitud enviada! Te llamaremos pronto.' });
+                setFormData({
+                    nombre: '',
+                    telefono: '',
+                    aceptacion: false
+                });
+            } else {
+                setMessage({ type: 'error', text: result.error || 'Error al enviar la solicitud. Inténtalo de nuevo.' });
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setMessage({ type: 'error', text: 'Error de conexión. Por favor, inténtalo más tarde.' });
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <div className="bg-black flex justify-center">
             <div className="bg-primary w-full max-w-6xl mx-6 lg:mx-8 px-8 lg:px-12 py-8 lg:py-12">
@@ -17,9 +75,22 @@ export default function FormularioCtr() {
                 >
                     NOSOTROS TE LLAMAMOS
                 </h2>
+
+                {/* Mensaje de estado */}
+                {message.text && (
+                    <div className={`mb-6 p-4 rounded ${
+                        message.type === 'success' 
+                            ? 'bg-green-100 text-green-700 border border-green-300' 
+                            : 'bg-red-100 text-red-700 border border-red-300'
+                    }`}>
+                        <p style={{ fontFamily: 'Clash Display', fontWeight: 500, fontSize: '16px' }}>
+                            {message.text}
+                        </p>
+                    </div>
+                )}
                 
                 {/* Formulario */}
-                <form action="#" className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                     
                     {/* Fila de inputs */}
                     <div className="flex flex-col sm:flex-row gap-4 lg:gap-6">
@@ -31,7 +102,10 @@ export default function FormularioCtr() {
                             id="nombre" 
                             placeholder="NOMBRE" 
                             required
-                            className="flex-1 h-12 px-4 border-0 rounded-none text-black placeholder-black bg-white"
+                            value={formData.nombre}
+                            onChange={handleChange}
+                            disabled={isLoading}
+                            className="flex-1 h-12 px-4 border-0 rounded-none text-black placeholder-black bg-white disabled:opacity-50"
                             style={{ 
                                 fontFamily: 'Clash Display',
                                 fontWeight: 500,
@@ -46,7 +120,10 @@ export default function FormularioCtr() {
                             id="telefono" 
                             placeholder="TELÉFONO" 
                             required
-                            className="flex-1 h-12 px-4 border-0 rounded-none text-black placeholder-black bg-white"
+                            value={formData.telefono}
+                            onChange={handleChange}
+                            disabled={isLoading}
+                            className="flex-1 h-12 px-4 border-0 rounded-none text-black placeholder-black bg-white disabled:opacity-50"
                             style={{ 
                                 fontFamily: 'Clash Display',
                                 fontWeight: 500,
@@ -65,7 +142,10 @@ export default function FormularioCtr() {
                                 name="aceptacion" 
                                 id="aceptacion" 
                                 required
-                                className="w-4 h-4 text-black bg-white rounded focus:ring-primary focus:ring-2"
+                                checked={formData.aceptacion}
+                                onChange={handleChange}
+                                disabled={isLoading}
+                                className="w-4 h-4 text-black bg-white rounded focus:ring-primary focus:ring-2 disabled:opacity-50"
                             />
                             <label 
                                 htmlFor="aceptacion"
@@ -83,14 +163,15 @@ export default function FormularioCtr() {
                         {/* Botón Submit - mismo ancho que input teléfono */}
                         <button 
                             type="submit"
-                            className="flex-1 bg-black text-primary h-12 hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer"
+                            disabled={isLoading}
+                            className="flex-1 bg-black text-primary h-12 hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                             style={{ 
                                 fontFamily: 'Clash Display',
                                 fontWeight: 500,
                                 fontSize: '16px'
                             }}
                         >
-                            RECIBIR LLAMADA
+                            {isLoading ? 'ENVIANDO...' : 'RECIBIR LLAMADA'}
                         </button>
                     </div>
                 </form>

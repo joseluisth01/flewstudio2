@@ -1,9 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function FormularioContacto({ descriptiveText }) {
+    const [formData, setFormData] = useState({
+        nombre: '',
+        empresa: '',
+        telefono: '',
+        email: '',
+        mensaje: '',
+        aceptacion: false
+    });
+    
+    const [isLoading, setIsLoading] = useState(false);
+    const [message, setMessage] = useState({ type: '', text: '' });
+
     // Texto por defecto si no se proporciona ninguno
     const defaultText = "¿Vas a desperdiciar la oportunidad de darle vida a tus ideas? Te explicaremos y documentaremos todo el proceso de creación.";
     
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setMessage({ type: '', text: '' });
+
+        // Validaciones básicas
+        if (!formData.nombre || !formData.empresa || !formData.telefono || !formData.email || !formData.mensaje || !formData.aceptacion) {
+            setMessage({ type: 'error', text: 'Por favor, completa todos los campos y acepta la política de privacidad.' });
+            setIsLoading(false);
+            return;
+        }
+
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/contact/full`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setMessage({ type: 'success', text: '¡Mensaje enviado correctamente! Te contactaremos pronto.' });
+                setFormData({
+                    nombre: '',
+                    empresa: '',
+                    telefono: '',
+                    email: '',
+                    mensaje: '',
+                    aceptacion: false
+                });
+            } else {
+                setMessage({ type: 'error', text: result.error || 'Error al enviar el mensaje. Inténtalo de nuevo.' });
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setMessage({ type: 'error', text: 'Error de conexión. Por favor, inténtalo más tarde.' });
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <div className="bg-black flex justify-center">
             <div
@@ -41,8 +105,21 @@ export default function FormularioContacto({ descriptiveText }) {
                     {descriptiveText || defaultText}
                 </p>
 
+                {/* Mensaje de estado */}
+                {message.text && (
+                    <div className={`w-full max-w-5xl px-6 lg:px-8 mb-4 p-4 rounded ${
+                        message.type === 'success' 
+                            ? 'bg-green-100 text-green-700 border border-green-300' 
+                            : 'bg-red-100 text-red-700 border border-red-300'
+                    }`}>
+                        <p style={{ fontFamily: 'Clash Display', fontWeight: 500, fontSize: '16px' }}>
+                            {message.text}
+                        </p>
+                    </div>
+                )}
+
                 {/* Formulario */}
-                <form action="#" className="w-full max-w-5xl px-6 lg:px-8 pb-8 lg:pb-12 space-y-8">
+                <form onSubmit={handleSubmit} className="w-full max-w-5xl px-6 lg:px-8 pb-8 lg:pb-12 space-y-8">
 
                     {/* Campos superiores - Grid 2x2 */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
@@ -52,7 +129,10 @@ export default function FormularioContacto({ descriptiveText }) {
                             id="nombre"
                             placeholder="Nombre"
                             required
-                            className="h-12 px-4 border-0 bg-white text-black placeholder-gray-600"
+                            value={formData.nombre}
+                            onChange={handleChange}
+                            disabled={isLoading}
+                            className="h-12 px-4 border-0 bg-white text-black placeholder-gray-600 disabled:opacity-50"
                             style={{
                                 fontFamily: 'Clash Display',
                                 fontWeight: 500,
@@ -65,7 +145,10 @@ export default function FormularioContacto({ descriptiveText }) {
                             id="empresa"
                             placeholder="Empresa"
                             required
-                            className="h-12 px-4 border-0 bg-white text-black placeholder-gray-600"
+                            value={formData.empresa}
+                            onChange={handleChange}
+                            disabled={isLoading}
+                            className="h-12 px-4 border-0 bg-white text-black placeholder-gray-600 disabled:opacity-50"
                             style={{
                                 fontFamily: 'Clash Display',
                                 fontWeight: 500,
@@ -78,7 +161,10 @@ export default function FormularioContacto({ descriptiveText }) {
                             id="telefono"
                             placeholder="Teléfono"
                             required
-                            className="h-12 px-4 border-0 bg-white text-black placeholder-gray-600"
+                            value={formData.telefono}
+                            onChange={handleChange}
+                            disabled={isLoading}
+                            className="h-12 px-4 border-0 bg-white text-black placeholder-gray-600 disabled:opacity-50"
                             style={{
                                 fontFamily: 'Clash Display',
                                 fontWeight: 500,
@@ -91,7 +177,10 @@ export default function FormularioContacto({ descriptiveText }) {
                             id="email"
                             placeholder="Email"
                             required
-                            className="h-12 px-4 border-0 bg-white text-black placeholder-gray-600"
+                            value={formData.email}
+                            onChange={handleChange}
+                            disabled={isLoading}
+                            className="h-12 px-4 border-0 bg-white text-black placeholder-gray-600 disabled:opacity-50"
                             style={{
                                 fontFamily: 'Clash Display',
                                 fontWeight: 500,
@@ -107,7 +196,10 @@ export default function FormularioContacto({ descriptiveText }) {
                         placeholder="Mensaje"
                         required
                         rows="6"
-                        className="w-full px-4 pt-4 border-0 bg-white text-black placeholder-gray-600 resize-none"
+                        value={formData.mensaje}
+                        onChange={handleChange}
+                        disabled={isLoading}
+                        className="w-full px-4 pt-4 border-0 bg-white text-black placeholder-gray-600 resize-none disabled:opacity-50"
                         style={{
                             fontFamily: 'Clash Display',
                             fontWeight: 500,
@@ -125,7 +217,10 @@ export default function FormularioContacto({ descriptiveText }) {
                                 name="aceptacion"
                                 id="aceptacion"
                                 required
-                                className="w-5 h-5 text-primary bg-white border-gray-300 rounded focus:ring-primary focus:ring-2"
+                                checked={formData.aceptacion}
+                                onChange={handleChange}
+                                disabled={isLoading}
+                                className="w-5 h-5 text-primary bg-white border-gray-300 rounded focus:ring-primary focus:ring-2 disabled:opacity-50"
                             />
                             <label
                                 htmlFor="aceptacion"
@@ -143,14 +238,15 @@ export default function FormularioContacto({ descriptiveText }) {
                         {/* Botón Submit */}
                         <button
                             type="submit"
-                            className="bg-primary text-black px-8 py-3 hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer flex-1 sm:flex-none sm:w-1/2"
+                            disabled={isLoading}
+                            className="bg-primary text-black px-8 py-3 hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer flex-1 sm:flex-none sm:w-1/2 disabled:opacity-50 disabled:cursor-not-allowed"
                             style={{
                                 fontFamily: 'Clash Display',
                                 fontWeight: 900,
                                 fontSize: '24px'
                             }}
                         >
-                            ENVIAR
+                            {isLoading ? 'ENVIANDO...' : 'ENVIAR'}
                         </button>
                     </div>
                 </form>
