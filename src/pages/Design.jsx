@@ -26,9 +26,11 @@ import servicio6 from "../assets/design/servicios-design-05.png";
 import asesoriaImg from "../assets/design/asesoria-design-00.png";
 
 // Importar garantías desde la carpeta correcta (reutilizamos las de garantías generales)
-import garantia1 from "../assets/garantias/sinestres.gif";
-import garantia2 from "../assets/garantias/especialistas.gif";
-import garantia3 from "../assets/garantias/cercania.gif";
+import garantia11 from "../assets/fabricacion/garantia1.gif";
+import garantia22 from "../assets/fabricacion/garantia2.gif";
+import garantia33 from "../assets/fabricacion/garantia3.gif";
+
+
 
 // Componente personalizado para la sección de Agencia de Diseño Gráfico
 function AgenciaDiseno() {
@@ -120,7 +122,7 @@ function AgenciaDiseno() {
                             />
                         </div>
 
-                        {/* Segundo botón CTA */}
+                        {/* Segundo botón CTA - Ancho completo como en la imagen */}
                         <div className="flex justify-center">
                             <form action="/contacto" method="get" className="w-full">
                                 <button
@@ -191,6 +193,21 @@ function AgenciaDiseno() {
         </div>
     );
 }
+
+const garantiasProfesionales2 = {
+  garantia00: {
+    img: garantia11,
+    title: "GESTIÓN DE PROYECTOS Y CONTROL DE PRESUPUESTO",
+  },
+  garantia01: {
+    img: garantia22,
+    title: "ESTUDIO DE TENDENCIAS Y MERCADOS",
+  },
+  garantia02: {
+    img: garantia33,
+    title: "CONSULTORÍA DE MARCA",
+  },
+};
 
 // Componente para los servicios profesionales de diseño gráfico
 function ServiciosProfesionales() {
@@ -350,23 +367,7 @@ function ServiciosProfesionales() {
     );
 }
 
-const garantiasProfesionales = {
-    garantia00: {
-        img: garantia1,
-        title: "GESTIÓN DE PROYECTOS Y CONTROL DE PRESUPUESTO",
-        text: "Ayudamos a incrementar la rentabilidad de cada cliente y a mejorar su financiación sobre cualquier proceso de lanzamiento de cada producción o cualquier otro lanzamiento de carácter visual."
-    },
-    garantia01: {
-        img: garantia2,
-        title: "ESTUDIO DE TENDENCIAS Y MERCADOS",
-        text: "Estamos constantemente observando cada sector de nuestros clientes para posicionarles tanto en su proceso como con su producción con el fin de lanzar productos textil."
-    },
-    garantia02: {
-        img: garantia3,
-        title: "CONSULTORÍA DE MARCA",
-        text: "Estudiamos cada cliente desde su punto de partida para mejorar sus debilidades y fortalecer sus mejores cualidades."
-    }
-};
+
 
 export default function Design() {
     return (
@@ -385,10 +386,11 @@ export default function Design() {
                 text2={'Analizamos tu negocio desde todos los ángulos y te damos las claves para que consigas convertir en fanáticos a tus clientes.'}
                 ctaText={'HÁBLANOS DE TU PROYECTO'}
             />
-            <Garantias
-                title={'<span style="color: white;">GARANTÍAS PROFESIONALES DE </span><br><span style="color: #fff600;">ASESORAMIENTO PERSONALIZADO</span>'}
-                guarantees={garantiasProfesionales}
-            />
+            <Elegirnos
+                            title={'<span style="color: white;">GARANTÍAS PROFESIONALES DE </span><br><span style="color: #fff600;">ASESORAMIENTO PERSONALIZADO</span>'}
+                            metadescription={'Nos volcamos con nuestros servicios de asesoría para subsanar todas tus inquietudes:'}
+                            features={garantiasProfesionales2}
+                        />
             <FormularioContacto 
                 descriptiveText="¿Vas a desperdiciar la oportunidad de darle vida a tus ideas? Te explicaremos y documentaremos todo el proceso de creación."
             />
