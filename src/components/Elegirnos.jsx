@@ -27,6 +27,8 @@ export default function Elegirnos({ title, metadescription, features }) {
                 }}
                 dangerouslySetInnerHTML={{ __html: metadescription }}
             />
+
+            <br /><br />
             
             {/* Características */}
             <div className="w-full max-w-6xl">

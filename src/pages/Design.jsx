@@ -7,6 +7,7 @@ import FormularioContacto from "../components/FormularioContacto";
 import Footer from "../components/Footer";
 import Asesoria from "../components/Asesoria";
 import Garantias from "../components/Garantias";
+import Elegirnos from "../components/Elegirnos"; // ← IMPORTACIÓN AÑADIDA
 
 import bannerImg from "../assets/design/main-banner-design.png";
 
@@ -23,7 +24,7 @@ import servicio5 from "../assets/design/servicios-design-04.png";
 import servicio6 from "../assets/design/servicios-design-05.png";
 
 // Imagen de asesoría
-import asesoriaImg from "../assets/design/asesoria-design-00.png";
+import asesoriaImg from "../assets/fabricacion/diferentesproblemasdiferentessoluciones2.png";
 
 // Importar garantías desde la carpeta correcta (reutilizamos las de garantías generales)
 import garantia11 from "../assets/fabricacion/garantia1.gif";
@@ -387,12 +388,12 @@ export default function Design() {
                 ctaText={'HÁBLANOS DE TU PROYECTO'}
             />
             <Elegirnos
-                            title={'<span style="color: white;">GARANTÍAS PROFESIONALES DE </span><br><span style="color: #fff600;">ASESORAMIENTO PERSONALIZADO</span>'}
-                            metadescription={'Nos volcamos con nuestros servicios de asesoría para subsanar todas tus inquietudes:'}
-                            features={garantiasProfesionales2}
-                        />
+                title={'<span style="color: white;">GARANTÍAS PROFESIONALES DE </span><br><span style="color: #fff600;">ASESORAMIENTO PERSONALIZADO</span>'}
+                metadescription={'Nos volcamos con nuestros servicios de asesoría para subsanar todas tus inquietudes:'}
+                features={garantiasProfesionales2}
+            />
             <FormularioContacto 
-                descriptiveText="¿Vas a desperdiciar la oportunidad de darle vida a tus ideas? Te explicaremos y documentaremos todo el proceso de creación."
+                descriptiveText="A un solo clic de elevar la imagen de tu negocio. Te explicaremos y documentaremos todo el proceso de creación."
             />
             <Footer />
         </div>

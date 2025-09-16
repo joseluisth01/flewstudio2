@@ -96,17 +96,18 @@ function AgenciaProduccionTextil() {
 
                         {/* Primer botón CTA */}
                         <div className="flex justify-center">
-                            <button
-                                className="bg-primary text-black px-8 py-3 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-full"
-                                style={{
-                                    fontFamily: 'Clash Display',
-                                    fontSize: 'clamp(16px, 2.5vw, 18px)',
-                                    fontWeight: 500
-                                }}
-                                
-                            >
-                                PRESUPUESTO GRATIS
-                            </button>
+                            <form action="/contacto" method="get" className="w-full">
+                                <button
+                                    className="bg-primary text-black px-8 py-3 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-full"
+                                    style={{
+                                        fontFamily: 'Clash Display',
+                                        fontSize: 'clamp(16px, 2.5vw, 18px)',
+                                        fontWeight: 500
+                                    }}
+                                >
+                                    PRESUPUESTO GRATIS
+                                </button>
+                            </form>
                         </div>
 
                         {/* Primera imagen (abajo) */}
@@ -136,16 +137,18 @@ function AgenciaProduccionTextil() {
 
                         {/* Segundo botón CTA */}
                         <div className="flex justify-center">
-                            <button
-                            className="bg-primary text-black px-8 py-3 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-full"
-                                style={{
-                                    fontFamily: 'Clash Display',
-                                    fontSize: 'clamp(16px, 2.5vw, 18px)',
-                                    fontWeight: 500
-                                }}
-                            >
-                                CUÉNTANOS TU IDEA
-                            </button>
+                            <form action="/contacto" method="get" className="w-full">
+                                <button
+                                    className="bg-primary text-black px-8 py-3 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-full"
+                                    style={{
+                                        fontFamily: 'Clash Display',
+                                        fontSize: 'clamp(16px, 2.5vw, 18px)',
+                                        fontWeight: 500
+                                    }}
+                                >
+                                    CUÉNTANOS TU IDEA
+                                </button>
+                            </form>
                         </div>
 
                         {/* Subtítulo */}
@@ -323,7 +326,7 @@ function ServiciosProfesionales() {
                                 <img
                                     src={value.img}
                                     alt={`Servicio ${index + 1}`}
-                                    className="w-full h-auto object-cover rounded-lg"
+                                    className="w-full h-auto object-cover"
                                 />
                             </div>
                         </div>
@@ -332,16 +335,18 @@ function ServiciosProfesionales() {
 
                 {/* CTA final */}
                 <div className="flex justify-center mt-16 lg:mt-24">
-                    <button
-                        className="bg-primary text-black px-12 py-4 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer"
-                        style={{
-                            fontFamily: 'Clash Display',
-                            fontSize: 'clamp(16px, 2.5vw, 20px)',
-                            fontWeight: 500
-                        }}
-                    >
-                        ¡QUIERO MEJORAR MI MARCA!
-                    </button>
+                    <form action="/contacto" method="get" className="w-full max-w-md">
+                        <button
+                            className="bg-primary text-black px-12 py-4 font-medium hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer w-full"
+                            style={{
+                                fontFamily: 'Clash Display',
+                                fontSize: 'clamp(16px, 2.5vw, 20px)',
+                                fontWeight: 500
+                            }}
+                        >
+                            ¡QUIERO MEJORAR MI MARCA!
+                        </button>
+                    </form>
                 </div>
             </div>
             
